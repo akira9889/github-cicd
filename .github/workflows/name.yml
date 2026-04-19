@@ -1,0 +1,9 @@
+name: Naming
+on: workflow_dispatch
+jobs:
+  print:
+    name: Super Useful Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Amazin Script
+      - run: echo "Hello"
