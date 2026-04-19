@@ -1,0 +1,16 @@
+name: Sharing data between jobs
+on: workflow_dispatch
+jobs:
+  share-on-github-output:
+    runs-on: ubuntu-latest
+    steps:
+      - id: step1
+        run: echo "data1=Hello World" >> "${GITHUB_OUTPUT}"
+      - env:
+          DATA1: ${{ steps.step1.outputs.data1 }}
+        run: echo "${DATA1}"
+  share-on-github-env:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "data1=Hello Japan" >> "${GITHUB_ENV}"
+      - run: echo "${data1}"
