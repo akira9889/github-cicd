@@ -1,0 +1,13 @@
+name : Literals
+on: workflow_dispatch
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep 'LITERAL_'
+        env:
+          LITERAL_NULL: ${{ null }}
+          LITERAL_BOOLEAN: ${{ true }}
+          LITERAL_NUMBER: ${{ 123 }}
+          LITERAL_STRING: ${{ 'Hello, World!' }}
+          LITERAL_OMIT_STRING: 'omit string test'
