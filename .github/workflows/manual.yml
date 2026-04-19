@@ -7,6 +7,13 @@ on:
         default: Hello
         required: true
         description: A cheerful word
+      log_level:
+        type: choice
+        options:
+          - debug
+          - info
+          - warning
+          - error
 jobs:
   run:
     runs-on: ubuntu-latest
